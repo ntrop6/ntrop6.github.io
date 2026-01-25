@@ -63,10 +63,12 @@ draft: false
 <div class="doujin-wrapper">
 <div class="text-side">
 <h2>Current Translations</h2>
-<div class="list-item"><i>*number 1*</i></div>
-<div class="list-item"><i>*number 2*</i></div>
-<div class="list-item"><i>*number 3*</i></div>
-<div class="list-item">...</div>
+<div class="list-item"><i>571960</i></div>
+<div class="list-item"><i>573499</i></div>
+<div class="list-item"><i>575401</i></div>
+<div class="list-item"><i>598119</i></div>
+<div class="list-item"><i>609698</i></div>
+<div class="list-item"><i>more to come!</i></div>
 </div>
 <div class="img-side">
 <img src="https://files.catbox.moe/2ipsk4.jpg" alt="Seia">
