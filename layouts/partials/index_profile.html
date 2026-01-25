@@ -108,6 +108,26 @@
         display: block !important;
     }
 
+    #lang-btn {
+        position: fixed;
+        top: 20px;
+        right: 40px;
+        background: transparent;
+        color: white;
+        border: 1px solid #ffffffaa;
+        padding: 8px 16px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-family: inherit;
+        font-weight: bold;
+        z-index: 1000;
+        transition: all 0.2s;
+    }
+
+    #lang-btn:hover {
+        background: rgba(255,255,255,0.1);
+    }
+
     @media (max-width: 768px) {
         .main {
             padding-left: 20px !important;
@@ -123,58 +143,113 @@
         .random-gif {
             display: none;
         }
+        #lang-btn {
+            top: 10px;
+            right: 10px;
+        }
     }
 </style>
+
+<button id="lang-btn" onclick="toggleLanguage()">English</button>
+
 <div class="layout">
     <div class="left">
         <img src="https://files.catbox.moe/dngyr0.jpg" alt="aynı ben" class="profile-img">
-        <h1 class="profile-text">meraba</h1>
+        <h1 class="profile-text" id="txt-greeting">meraba</h1>
     </div>
     <div class="right">
-    <h2 class="title">Projelerim,</h2>
+        <h2 class="title" id="txt-projects">Projelerim,</h2>
     
-    <div class="links">
-        <a href="https://tsuk.tr" target="_blank">Tsukihime Türkçe</a>
-        <a href="https://dou.jin" target="_blank">Doujinshi çevirilerim</a>
-        <a href="https://res.im" target="_blank">Resim/animasyon</a>
+        <div class="links">
+            <a href="https://tsuk.tr" target="_blank" id="lnk-1">Tsukihime Türkçe</a>
+            <a href="https://dou.jin" target="_blank" id="lnk-2">Doujinshi Çevirileri</a>
+            <a href="https://res.im" target="_blank" id="lnk-3">Resim/animasyon</a>
+        </div>
     </div>
 </div>
-</div>
+
 <img id="gif-display" class="random-gif" src="" alt="">
+
 <div class="footer">
     <div class="discord">discord:ntrop6</div>
-    <a href="https://files.catbox.moe/uci9zc.gif" class="important-link" target="_blank">önemli</a>
+    <a href="https://files.catbox.moe/uci9zc.gif" class="important-link" target="_blank" id="lnk-imp">önemli</a>
 </div>
+
 <script>
+    const content = {
+        tr: {
+            greeting: "meraba",
+            projects: "Projelerim,",
+            link1: "Tsukihime Türkçe",
+            link2: "Doujinshi Çevirileri",
+            link3: "Resim/animasyon",
+            important: "önemli",
+            btn: "English"
+        },
+        en: {
+            greeting: "hei",
+            projects: "Projects,",
+            link1: "Tsukihime Turkish",
+            link2: "Doujinshi Translations",
+            link3: "Art/Animation",
+            important: "important",
+            btn: "Türkçe"
+        }
+    };
+
+    let isEnglish = false;
+
+    function toggleLanguage() {
+        isEnglish = !isEnglish;
+        updateText();
+    }
+
+    function updateText() {
+        const lang = isEnglish ? 'en' : 'tr';
+        document.getElementById('txt-greeting').innerText = content[lang].greeting;
+        document.getElementById('txt-projects').innerText = content[lang].projects;
+        document.getElementById('lnk-1').innerText = content[lang].link1;
+        document.getElementById('lnk-2').innerText = content[lang].link2;
+        document.getElementById('lnk-3').innerText = content[lang].link3;
+        document.getElementById('lnk-imp').innerText = content[lang].important;
+        document.getElementById('lang-btn').innerText = content[lang].btn;
+    }
+
+    const userLang = navigator.language || navigator.userLanguage; 
+    if (userLang.startsWith('en')) {
+        isEnglish = true;
+        updateText();
+    }
+
     (function() {
         var gifs = [
             "https://files.catbox.moe/kzpc84.gif",
             "https://files.catbox.moe/991f57.gif",
-            "https://gif.fxtwitter.com/tweet_video/G9pGxJGWQAAF5k5.gif"
-            "https://cdn.discordapp.com/attachments/1274429099368255488/1278737556913000611/togif.gif?ex=697787a7&is=69763627&hm=1556163d9c243e065a1a189a5061266da57cb71412e2a827381a506ace2682e2&"
-            "https://cdn.discordapp.com/attachments/1268209240582000713/1456023732882505879/attachment.gif?ex=6977d0c5&is=69767f45&hm=1af09de8dc79b575a09395a41e3219ef3dbbfce0368e8103bfc68956f5206aff&"
-            "https://media1.tenor.com/m/VQZ6IcdTSgQAAAAd/aura-monster-stairs.gif"
-            "https://media1.tenor.com/m/0Rst3ki8tgsAAAAd/nanaya-nanaya-shiki.gif"
-            "https://cdn.discordapp.com/attachments/1028572709329842226/1332320290964770886/doc_2025-01-24_18-59-25.gif?ex=69775876&is=697606f6&hm=78b96c09f2ea616cff5aaa54862ffa16a895797b924a2af51374945d1f9c6dfc&"
-            "https://cdn.discordapp.com/attachments/1404827400931377264/1407067040367513661/attachment.gif?ex=6977b0cc&is=69765f4c&hm=23bba4e8d7318ac685b686e3dc052f239996ab2d296ac95e5e3e9c2d4ef7bf64&"
-            "https://cdn.discordapp.com/attachments/1062785630951710750/1328825019068977193/SeiaNutO.gif?ex=6977d03c&is=69767ebc&hm=a83cf6e5c96f77cc954c4480f05c96b6d71f3813f605e55fe7693e3a02e078b6&"
-            "https://media1.tenor.com/m/8_3AEhHD970AAAAd/black-souls-black-souls-2.gif"
-            "https://files.catbox.moe/m7bgx6.gif"
-            "https://media1.tenor.com/m/roLqHg5bV3YAAAAd/rewrite-ohtori.gif"
-            "https://media1.tenor.com/m/LNaWcbgFeScAAAAd/sakura-no-uta-sakura-no-toki.gif"
-            "https://media1.tenor.com/m/b45nzOnxNfsAAAAd/sheikko-sakura-no-uta.gif"
-            "https://media1.tenor.com/m/nkr2LeO7vPYAAAAd/wlen-white.gif"
-            "https://media1.tenor.com/m/CXTNuW-kXg0AAAAd/kohaku-kohaku-dance.gif"
-            "https://media1.tenor.com/m/iYEwp00qJ2sAAAAd/tsukihime-kohaku.gif"
-            "https://media1.tenor.com/m/NC7gBD8mZpYAAAAd/kohaku-tsukihime.gif"
-            "https://cdn.discordapp.com/attachments/1365859134087368755/1455642378135142460/r6lwilaigp7g1.gif?ex=6977bf1b&is=69766d9b&hm=93848241ea10bbf39c946652d7b3c96d5ae38d1ba4348a1281147d59cf539bac&"
-            "https://media1.tenor.com/m/F1Fitm3mxocAAAAd/black-souls-2-black-souls.gif"
-            "https://media1.tenor.com/m/qbkprGkYmx0AAAAd/queen-of-hearts-lorina.gif"
-            "https://files.catbox.moe/fts54f.png"
-            "https://files.catbox.moe/vos3gv.png"
-            "https://files.catbox.moe/xg8zmj.png"
-            "https://files.catbox.moe/zq8zs5.png"
-            "https://files.catbox.moe/hzvgfl.png"
+            "https://gif.fxtwitter.com/tweet_video/G9pGxJGWQAAF5k5.gif",
+            "https://cdn.discordapp.com/attachments/1274429099368255488/1278737556913000611/togif.gif?ex=697787a7&is=69763627&hm=1556163d9c243e065a1a189a5061266da57cb71412e2a827381a506ace2682e2&",
+            "https://cdn.discordapp.com/attachments/1268209240582000713/1456023732882505879/attachment.gif?ex=6977d0c5&is=69767f45&hm=1af09de8dc79b575a09395a41e3219ef3dbbfce0368e8103bfc68956f5206aff&",
+            "https://media1.tenor.com/m/VQZ6IcdTSgQAAAAd/aura-monster-stairs.gif",
+            "https://media1.tenor.com/m/0Rst3ki8tgsAAAAd/nanaya-nanaya-shiki.gif",
+            "https://cdn.discordapp.com/attachments/1028572709329842226/1332320290964770886/doc_2025-01-24_18-59-25.gif?ex=69775876&is=697606f6&hm=78b96c09f2ea616cff5aaa54862ffa16a895797b924a2af51374945d1f9c6dfc&",
+            "https://cdn.discordapp.com/attachments/1404827400931377264/1407067040367513661/attachment.gif?ex=6977b0cc&is=69765f4c&hm=23bba4e8d7318ac685b686e3dc052f239996ab2d296ac95e5e3e9c2d4ef7bf64&",
+            "https://cdn.discordapp.com/attachments/1062785630951710750/1328825019068977193/SeiaNutO.gif?ex=6977d03c&is=69767ebc&hm=a83cf6e5c96f77cc954c4480f05c96b6d71f3813f605e55fe7693e3a02e078b6&",
+            "https://media1.tenor.com/m/8_3AEhHD970AAAAd/black-souls-black-souls-2.gif",
+            "https://files.catbox.moe/m7bgx6.gif",
+            "https://media1.tenor.com/m/roLqHg5bV3YAAAAd/rewrite-ohtori.gif",
+            "https://media1.tenor.com/m/LNaWcbgFeScAAAAd/sakura-no-uta-sakura-no-toki.gif",
+            "https://media1.tenor.com/m/b45nzOnxNfsAAAAd/sheikko-sakura-no-uta.gif",
+            "https://media1.tenor.com/m/nkr2LeO7vPYAAAAd/wlen-white.gif",
+            "https://media1.tenor.com/m/CXTNuW-kXg0AAAAd/kohaku-kohaku-dance.gif",
+            "https://media1.tenor.com/m/iYEwp00qJ2sAAAAd/tsukihime-kohaku.gif",
+            "https://media1.tenor.com/m/NC7gBD8mZpYAAAAd/kohaku-tsukihime.gif",
+            "https://cdn.discordapp.com/attachments/1365859134087368755/1455642378135142460/r6lwilaigp7g1.gif?ex=6977bf1b&is=69766d9b&hm=93848241ea10bbf39c946652d7b3c96d5ae38d1ba4348a1281147d59cf539bac&",
+            "https://media1.tenor.com/m/F1Fitm3mxocAAAAd/black-souls-2-black-souls.gif",
+            "https://media1.tenor.com/m/qbkprGkYmx0AAAAd/queen-of-hearts-lorina.gif",
+            "https://files.catbox.moe/fts54f.png",
+            "https://files.catbox.moe/vos3gv.png",
+            "https://files.catbox.moe/xg8zmj.png",
+            "https://files.catbox.moe/zq8zs5.png",
+            "https://files.catbox.moe/hzvgfl.png",
             "https://files.catbox.moe/7qgot8.png"
         ];
         var randomGif = gifs[Math.floor(Math.random() * gifs.length)];
