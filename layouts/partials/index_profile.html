@@ -100,10 +100,11 @@
         position: fixed;
         bottom: 100px;
         right: 40px;
-        width: 150px;
+        width: 200px;
         height: auto;
-        z-index: 90;
+        z-index: 9999 !important;
         pointer-events: none;
+        display: block !important;
     }
 
     @media (max-width: 768px) {
@@ -119,7 +120,7 @@
             justify-content: center !important;
         }
         .random-gif {
-            display: none;
+            display: none !important;
         }
     }
 </style>
@@ -141,12 +142,13 @@
     </div>
 </div>
 
-<img id="gif-display" class="random-gif" src="" alt="" referrerpolicy="no-referrer">
-
 <div class="footer">
     <div class="discord">discord:ntrop6</div>
     <a href="https://files.catbox.moe/uci9zc.gif" class="important-link" target="_blank">önemli</a>
 </div>
+
+<!-- Moved this tag to the very end -->
+<img id="gif-display" class="random-gif" src="" alt="" referrerpolicy="no-referrer">
 
 <script>
     (function() {
@@ -182,9 +184,6 @@
             "https://files.catbox.moe/oes9nm.jpg"
         ];
         var randomGif = gifs[Math.floor(Math.random() * gifs.length)];
-        var imgElement = document.getElementById('gif-display');
-        imgElement.src = randomGif;
-        
-        console.log("Loading image:", randomGif);
+        document.getElementById('gif-display').src = randomGif;
     })();
 </script>
