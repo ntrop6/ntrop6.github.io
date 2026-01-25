@@ -6,7 +6,7 @@
     .main {
         max-width: none !important;
         margin-left: 0 !important;
-        padding-left: 320px !important;
+        padding-left: 350px !important;
     }
 
     .profile {
@@ -36,8 +36,8 @@
     }
 
     .profile-text {
-        margin-top: 15px;
-        font-size: 28px;
+        margin-top: 23px;
+        font-size: 36px;
         font-weight: bold;
     }
 
@@ -96,6 +96,16 @@
         font-weight: bold;
     }
 
+    .random-gif {
+        position: fixed;
+        bottom: 100px;
+        right: 40px;
+        width: 150px;
+        height: auto;
+        z-index: 90;
+        pointer-events: none;
+    }
+
     @media (max-width: 768px) {
         .main {
             padding-left: 20px !important;
@@ -107,6 +117,9 @@
         }
         .profile {
             justify-content: center !important;
+        }
+        .random-gif {
+            display: none;
         }
     }
 </style>
@@ -128,7 +141,27 @@
     </div>
 </div>
 
+<img id="gif-display" class="random-gif" src="" alt="">
+
 <div class="footer">
     <div class="discord">discord:ntrop6</div>
     <a href="https://files.catbox.moe/uci9zc.gif" class="important-link" target="_blank">önemli</a>
 </div>
+
+<script>
+    (function() {
+        var gifs = [
+            "https://files.catbox.moe/kzpc84.gif",
+            "https://files.catbox.moe/991f57.gif",
+            "https://gif.fxtwitter.com/tweet_video/G9pGxJGWQAAF5k5.gif"
+            "https://cdn.discordapp.com/attachments/1274429099368255488/1278737556913000611/togif.gif?ex=697787a7&is=69763627&hm=1556163d9c243e065a1a189a5061266da57cb71412e2a827381a506ace2682e2&"
+            "https://cdn.discordapp.com/attachments/1268209240582000713/1456023732882505879/attachment.gif?ex=6977d0c5&is=69767f45&hm=1af09de8dc79b575a09395a41e3219ef3dbbfce0368e8103bfc68956f5206aff&"
+            "https://tenor.com/view/aura-monster-stairs-grimm-black-souls-black-souls-ii-gif-6126718628580772356"
+            "https://tenor.com/view/nanaya-nanaya-shiki-shiki-tohno-tohno-shiki-gif-15067687411024442891"
+            "https://cdn.discordapp.com/attachments/1028572709329842226/1332320290964770886/doc_2025-01-24_18-59-25.gif?ex=69775876&is=697606f6&hm=78b96c09f2ea616cff5aaa54862ffa16a895797b924a2af51374945d1f9c6dfc&"
+            "https://cdn.discordapp.com/attachments/1404827400931377264/1407067040367513661/attachment.gif?ex=6977b0cc&is=69765f4c&hm=23bba4e8d7318ac685b686e3dc052f239996ab2d296ac95e5e3e9c2d4ef7bf64&"
+        ];
+        var randomGif = gifs[Math.floor(Math.random() * gifs.length)];
+        document.getElementById('gif-display').src = randomGif;
+    })();
+</script>
