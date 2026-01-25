@@ -141,7 +141,7 @@
     </div>
 </div>
 
-<img id="gif-display" class="random-gif" src="" alt="">
+<img id="gif-display" class="random-gif" src="" alt="" referrerpolicy="no-referrer">
 
 <div class="footer">
     <div class="discord">discord:ntrop6</div>
@@ -182,6 +182,9 @@
             "https://files.catbox.moe/oes9nm.jpg"
         ];
         var randomGif = gifs[Math.floor(Math.random() * gifs.length)];
-        document.getElementById('gif-display').src = randomGif;
+        var imgElement = document.getElementById('gif-display');
+        imgElement.src = randomGif;
+        
+        console.log("Loading image:", randomGif);
     })();
 </script>
