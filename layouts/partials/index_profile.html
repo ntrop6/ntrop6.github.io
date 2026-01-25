@@ -1,13 +1,13 @@
-<div class="custom-layout">
-    <div class="left-column">
-        <img src="https://files.catbox.moe/dngyr0.jpg" alt="aynı ben" class="profil-img">
-        <h1 class="profil-aciklama">meraba</h1>
+<div class="layout">
+    <div class="left">
+        <img src="https://files.catbox.moe/dngyr0.jpg" alt="aynı ben" class="profile-img">
+        <h1 class="profile-text">meraba</h1>
     </div>
 
-    <div class="right-column">
-        <h2 class="section-title">Projelerim,</h2>
+    <div class="right">
+        <h2 class="title">Projelerim,</h2>
         
-        <div class="link-list">
+        <div class="links">
             <a href="https://tsuk.tr" target="_blank">Tsukihime Türkçe</a>
             <a href="https://dou.jin" target="_blank">Doujinshi çevirilerim</a>
             <a href="https://res.im" target="_blank">Resim/animasyon</a>
@@ -15,9 +15,9 @@
     </div>
 </div>
 
-<div class="my-footer">
-    <div class="discord-text">discord:ntrop6</div>
-    <a href="https://files.catbox.moe/uci9zc.gif" class="onemli-link" target="_blank">önemli</a>
+<div class="footer">
+    <div class="discord">discord:ntrop6</div>
+    <a href="https://files.catbox.moe/uci9zc.gif" class="important-link" target="_blank">önemli</a>
 </div>
 
 <style>
@@ -25,21 +25,82 @@
         display: none !important;
     }
 
-    .custom-layout {
+    .layout {
         display: flex;
         align-items: flex-start;
-        gap: 120px; 
+        gap: 120px;
         margin-top: 80px;
-        margin-left: 0; 
+        margin-left: 0;
     }
 
-    .left-column {
+    .left {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
-    .profil-img {
+    .profile-img {
         width: 180px;
         height: auto;
-        object-fit: cov
+        object-fit: cover;
+    }
+
+    .profile-text {
+        margin-top: 15px;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .right {
+        padding-top: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .title {
+        font-size: 32px;
+        font-weight: bold;
+        margin-bottom: 25px;
+    }
+
+    .links {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .links a {
+        font-size: 22px;
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        transition: opacity 0.2s;
+        display: inline-block;
+    }
+
+    .links a:hover {
+        opacity: 0.7;
+        transform: translateX(5px);
+    }
+
+    div.footer {
+        position: fixed;
+        bottom: 30px;
+        left: 40px;
+        right: 40px;
+        display: flex;
+        justify-content: space-between;
+        font-weight: 600;
+        font-size: 18px;
+        color: #b0b0b0;
+        z-index: 100;
+    }
+
+    .important-link {
+        font-size: 24px;
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+</style>
