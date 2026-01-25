@@ -1,18 +1,16 @@
 ---
 title: "Doujinshi"
 draft: false
-layout: "single"
 ---
 
 <style>
-    .post-title, header, h1 {
+    .post-title, .entry-header, h1 {
         display: none !important;
     }
 
     body {
-        background-color: #1e1e1e;
+        background-color: #1d1e20; 
         color: white;
-        font-family: sans-serif;
     }
 
     .doujin-wrapper {
@@ -20,8 +18,9 @@ layout: "single"
         align-items: center;
         justify-content: center;
         gap: 80px;
-        min-height: 80vh;
+        min-height: 60vh;
         padding: 20px;
+        margin-top: 50px;
     }
 
     .text-side {
@@ -57,21 +56,19 @@ layout: "single"
             gap: 40px;
             text-align: center;
         }
-        .text-side {
-            text-align: center;
-        }
+        .text-side { text-align: center; }
     }
 </style>
 
 <div class="doujin-wrapper">
-    <div class="text-side">
-        <h2>Current Translations</h2>
-        <div class="list-item">*number 1*</div>
-        <div class="list-item">*number 2*</div>
-        <div class="list-item">*number 3*</div>
-        <div class="list-item">...</div>
-    </div>
-
-    <div class="img-side">
-        <img src="https://files.catbox.moe/2ipsk4.jpg" alt="aynı ben">
+<div class="text-side">
+<h2>Current Translations</h2>
+<div class="list-item"><i>*number 1*</i></div>
+<div class="list-item"><i>*number 2*</i></div>
+<div class="list-item"><i>*number 3*</i></div>
+<div class="list-item">...</div>
+</div>
+<div class="img-side">
+<img src="https://files.catbox.moe/2ipsk4.jpg" alt="Seia">
+</div>
 </div>
