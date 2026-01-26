@@ -128,6 +128,53 @@
         background: rgba(255,255,255,0.1);
     }
 
+    #theme-toggle {
+        display: none !important;
+    }
+
+    @media (max-width: 768px) {
+        .main {
+            padding-left: 20px !important;
+            padding-right: 20px !important;
+        }
+        
+        .layout {
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .profile {
+            justify-content: center !important;
+        }
+
+        .right {
+            align-items: center;
+            text-align: center;
+        }
+
+        .random-gif {
+            width: 140px !important;
+            height: 140px !important;
+            bottom: 80px;
+            right: 10px;
+            opacity: 0.8;
+        }
+
+        #lang-btn {
+            top: 15px;
+            right: 15px;
+            padding: 5px 10px;
+            font-size: 14px;
+        }
+        
+        div.footer {
+            left: 20px;
+            right: 20px;
+            font-size: 14px;
+        }
+    }
 </style>
 
 <button id="lang-btn" onclick="toggleLanguage()">English</button>
