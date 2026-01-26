@@ -132,7 +132,7 @@
         display: none !important;
     }
 
-    @media (max-width: 768px) {
+@media (max-width: 768px) {
         .main {
             padding-left: 20px !important;
             padding-right: 20px !important;
@@ -155,23 +155,31 @@
         }
 
         .random-gif {
-            width: 140px !important;
-            height: 140px !important;
-            bottom: 80px;
-            right: 10px;
-            opacity: 0.8;
+            position: relative !important;
+            width: 250px !important;
+            height: 250px !important;
+            bottom: auto !important;
+            right: auto !important;
+            margin: 40px auto !important;
+            display: block !important;
+            opacity: 1 !important;
+        }
+        
+        div.footer {
+            position: relative !important;
+            bottom: auto !important;
+            left: auto !important;
+            right: auto !important;
+            margin-top: 10px;
+            margin-bottom: 40px;
+            width: 100%;
+            padding: 0 10px;
         }
 
         #lang-btn {
             top: 15px;
             right: 15px;
             padding: 5px 10px;
-            font-size: 14px;
-        }
-        
-        div.footer {
-            left: 20px;
-            right: 20px;
             font-size: 14px;
         }
     }
