@@ -48,6 +48,7 @@ draft: false
         border-radius: 15px;
         object-fit: cover;
         border: 2px solid #333;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     }
 
     @media (max-width: 768px) {
